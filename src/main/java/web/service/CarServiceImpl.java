@@ -13,7 +13,7 @@ public class CarServiceImpl implements CarService{
     private CarDao carDao;
 
     @Override
-    public  List<Car> getList(List<Car> cars, int count) {
-       return carDao.getList(cars, count);
+    public  List<Car> getList(int count) {
+       return carDao.getList(count);
     }
 }

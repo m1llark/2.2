@@ -19,14 +19,8 @@ public class CarsController {
         this.carService = carService;
     }
     @GetMapping(value = "/cars")
-    public String printCars(@RequestParam(value = "count", defaultValue = "5") int count,ModelMap model) {
-        List<Car> cars = new ArrayList<>();
-        cars.add(new Car("Tesla","Igor",100));
-        cars.add(new Car("Mercedes","Kristina",200));
-        cars.add(new Car("BMW","Max",300));
-        cars.add(new Car("Bugatti","Alex",400));
-        cars.add(new Car("Aston Martin","Oleg",500));
-        model.addAttribute("cars", carService.getList(cars,count));
+    public String printCars(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
+        model.addAttribute("cars", carService.getList(count));
         return "cars";
     }
 }
